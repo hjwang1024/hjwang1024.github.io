@@ -1,0 +1,27 @@
+{
+  "name": "pdxx-blog",
+  "version": "1.0.0",
+  "description": "派大星星的个人博客",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjwang1024/hjwang1024.github.io.git"
+  },
+  "keywords": [
+    "博客"
+  ],
+  "author": "派大星星",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjwang1024/hjwang1024.github.io/issues"
+  },
+  "homepage": "https://github.com/hjwang1024/hjwang1024.github.io#readme",
+  "devDependencies": {
+    "vitepress": "^1.0.1"
+  }
+}
