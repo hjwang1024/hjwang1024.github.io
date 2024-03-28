@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Blog"
-  text: "派大星星的个人博客"
+  text: "派大星星的个人博客s"
   tagline: My great project tagline
   actions:
     - theme: brand
