@@ -73,7 +73,6 @@ export async function genNavSide() {
     navList.sort((a, b) => a.sort - b.sort)
     for (let i = 0; i < navList.length; i++) {
         const { dir, navText, sideDirs, menuSort } = navList[i]
-
         const dirName = `/${dir}/`
         // 生成导航栏
         const navItem = {
@@ -81,11 +80,7 @@ export async function genNavSide() {
             link: dirName,
         }
         nav.push(navItem)
-
         // 生成侧边栏
-        if (menuSort) {
-        }
-
         if (sideDirs) {
             sidebar[dirName] = []
             menuSort.forEach(side => {

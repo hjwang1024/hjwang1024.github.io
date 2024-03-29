@@ -1,7 +1,7 @@
 {
   "name": "pdxx-blog",
   "version": "1.0.0",
-  "description": "派大星星的个人博客",
+  "description": "派大星星的学习笔记",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/hjwang1024/hjwang1024.github.io.git"
   },
   "keywords": [
-    "博客"
+    "博客",
+    "笔记",
+    "前端"
   ],
   "author": "派大星星",
   "license": "ISC",
@@ -25,10 +27,5 @@
   "devDependencies": {
     "node-fetch": "^3.3.2",
     "vitepress": "^1.0.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
