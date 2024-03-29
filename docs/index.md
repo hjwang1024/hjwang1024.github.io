@@ -1,6 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page.html
-layout: home
+layout: page
 # hero:
 #   name: "Blog"
 #   text: "派大星星的个人博客"
@@ -21,3 +21,5 @@ layout: home
 #   - title: Feature C
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
+<div>2222</div>

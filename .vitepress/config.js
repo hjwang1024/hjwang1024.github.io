@@ -10,7 +10,7 @@ export default defineConfig({
     appearance: 'dark',
     base: '/',
     lastUpdated: true, //显示最后更新
-    head: [['link', { rel: 'icon', href: '/avatar.jpg' }]],
+    head: [['link', { rel: 'icon', href: '/avatar.png' }]],
     themeConfig: {
         nav,
         sidebar,
