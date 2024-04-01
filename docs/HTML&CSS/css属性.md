@@ -2,7 +2,7 @@
 
 ## 黑白配色
 
--   若 filter 属性的值不是 none，会给「绝对和固定定位的后代」创建一个 containing block，除非它适用的元素是当前浏览上下文中的文档根元素（即<html>）。
+-   若 filter 属性的值不是 none，会给「绝对和固定定位的后代」创建一个 containing block，除非它适用的元素是当前浏览上下文中的文档根元素（即`html`）。
 -   `filter: grayscale(1)`
 -   兼容处理
     ```css
