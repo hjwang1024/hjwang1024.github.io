@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <video id="localVideo" autoplay playsinline muted></video>
+            <button @click="shareScreen()">屏幕共享</button>
+            
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data(){
+                return{
+                }
+            },
+            mounted(){
+            },
+            methods:{
+                // 播放本地视频流
+                playLocalStream(stream) {
+                    const videoEl = document.getElementById('localVideo')
+                    videoEl.srcObject = stream
+                },
+
+                // 共享屏幕
+                async shareScreen(){
+                    let stream = await navigator.mediaDevices.getDisplayMedia({
+                        audio: true,
+                        video: true,
+                    })
+                    this.playLocalStream(stream)
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

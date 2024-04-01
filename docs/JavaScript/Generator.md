@@ -1,54 +1,58 @@
-## Generator函数
+# Generator 函数
 
-- Generator 函数是一个状态机，封装了多个内部状态。 执行 Generator 函数会返回一个遍历器对象
-- 形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号(*)；二是，函数体内部使用yield表达式，定义不同的内部状态。
+## 使用
+
+-   Generator 函数是一个状态机，封装了多个内部状态。 执行 Generator 函数会返回一个遍历器对象
+-   形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function 关键字与函数名之间有一个星号(\*)；二是，函数体内部使用 yield 表达式，定义不同的内部状态。
 
 ```js
 function* gen() {
-  yield 1;
-  yield 2;
-  yield 3;
-  return 4;
+    yield 1
+    yield 2
+    yield 3
+    return 4
 }
 const g = gen()
-console.log(g); // 打印值为gen函数 而非4
-
+console.log(g) // 打印值为gen函数 而非4
 ```
 
-- Generator 函数是分段执行的，yield表达式是暂停执行的标记，而next方法可以恢复执行
+-   Generator 函数是分段执行的，yield 表达式是暂停执行的标记，而 next 方法可以恢复执行
+
 ```js
 function* gen() {
-  yield 1;
-  yield 2;
-  yield 3;
-  return 4;
+    yield 1
+    yield 2
+    yield 3
+    return 4
 }
 const g = gen()
-console.log(g); // 打印值为gen函数 而非4
+console.log(g) // 打印值为gen函数 而非4
 console.log(g.next()) // {value:1,done:false}
 console.log(g.next()) // {value:2,done:false}
 console.log(g.next()) // {value:3,done:false}
 console.log(g.next()) // {value:4,done:true} // 表示执行完毕
 ```
 
-- next里面的参数会赋值为上一次yield的执行结果
+-   next 里面的参数会赋值为上一次 yield 的执行结果
+
 ```js
 function* gen() {
-  const num1 = yield 1;
-  console.log(num1)
-  const num2 = yield 2;
-  const num3 = yield 3;
-  return 4;
+    const num1 = yield 1
+    console.log(num1)
+    const num2 = yield 2
+    const num3 = yield 3
+    return 4
 }
 const g = gen()
-console.log(g); // 打印值为gen函数 而非4
+console.log(g) // 打印值为gen函数 而非4
 console.log(g.next(123)) // {value:1,done:false}  123赋值到num1 并打印
 console.log(g.next()) // {value:2,done:false}
 console.log(g.next()) // {value:3,done:false}
 console.log(g.next()) // {value:4,done:true}
 ```
 
-### 实现async await 
+## 实现 async await
+
 ```js
 // 模拟异步操作
 function foo(num) {

@@ -1,5 +1,5 @@
 export default {
-    navText: '算法',
-    // menuSort: ['数组相关', '链表相关', '排序', '字符串相关', '树相关', '其他'],
+    navText: 'JS',
+    menuSort: [],
     sort: 4,
 }

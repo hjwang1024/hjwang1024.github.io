@@ -7,7 +7,7 @@ import path from 'path'
 
 const SRC_DIR = 'docs'
 
-const IGNORE_FILE = ['index', 'nav', '.DS_Store', 'nav.js', 'index.js']
+const IGNORE_FILE = ['index', 'nav', '.DS_Store', 'nav.js', 'index.js', 'index.md']
 const IGNORE_DIR = ['images', 'public']
 const IGNORE_EXT = ['.html'] //忽略后缀
 
@@ -84,16 +84,19 @@ export async function genNavSide() {
         // 生成侧边栏
         if (sideDirs) {
             sidebar[dirName] = []
-            if (menuSort) {
+            if (menuSort && menuSort.length) {
+                // 需要排序
                 menuSort.forEach(side => {
                     sideDirs.forEach(sidedir => {
                         if (side == sidedir) {
+                            //文件夹
                             sidebar[dirName].push({
                                 text: side,
                                 items: genItems(`${dir}/${sidedir}`),
                                 collapsed: true,
                             })
                         } else if (side + '.md' == sidedir) {
+                            //md文件
                             sidebar[dirName].push({
                                 text: side,
                                 link: `${dirName}${side}`,
