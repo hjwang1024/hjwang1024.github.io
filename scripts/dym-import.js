@@ -8,7 +8,7 @@ import path from 'path'
 const SRC_DIR = 'docs'
 
 const IGNORE_FILE = ['index', 'nav', '.DS_Store', 'nav.js', 'index.js', 'index.md']
-const IGNORE_DIR = ['images', 'public']
+const IGNORE_DIR = ['images', 'public', 'PDF']
 const IGNORE_EXT = ['.html', '.js', '.DS_Store'] //忽略后缀
 
 const srcSource = path.resolve(SRC_DIR)
@@ -22,7 +22,6 @@ function read(filePath, res) {
     dirs = dirs.filter(dir => !IGNORE_DIR.includes(dir) && !IGNORE_EXT.includes(path.extname(dir)))
     dirs.forEach(dir => {
         const current = filePath + '/' + dir
-        console.log('dir', dir)
         if (isDirectory(current)) {
             read(current, res)
         } else {
@@ -40,7 +39,6 @@ function read(filePath, res) {
 
 async function getNavJs() {
     const res = []
-
     const dirs = fs.readdirSync(srcSource).filter(dir => !IGNORE_DIR.includes(dir) && !dir.includes('.'))
     for (let i = 0; i < dirs.length; i++) {
         const dir = dirs[i] //文件夹名 如Project
@@ -53,7 +51,6 @@ async function getNavJs() {
             navData.sideDirs = navData.sideDirs.filter(dir => !IGNORE_DIR.includes(dir) && !IGNORE_FILE.includes(dir))
             navData.dir = dir
             res.push(navData)
-            console.log('navData', navData)
         } catch (error) {
             console.log('error', error)
         }
@@ -73,7 +70,7 @@ export async function genNavSide() {
     const sidebar = {}
     navList.sort((a, b) => a.sort - b.sort)
     for (let i = 0; i < navList.length; i++) {
-        const { dir, navText, sideDirs, menuSort } = navList[i]
+        let { dir, navText, sideDirs } = navList[i]
         const dirName = `/${dir}/`
         // 生成导航栏
         const navItem = {
@@ -82,67 +79,40 @@ export async function genNavSide() {
         }
         nav.push(navItem)
         // 生成侧边栏
-        if (sideDirs) {
-            sidebar[dirName] = []
-            if (menuSort && menuSort.length) {
-                // 需要排序
-                menuSort.forEach(side => {
-                    sideDirs.forEach(sidedir => {
-                        if (side == sidedir) {
-                            //文件夹
-                            sidebar[dirName].push({
-                                text: side,
-                                items: genItems(`${dir}/${sidedir}`),
-                                collapsed: true,
-                            })
-                        } else if (side + '.md' == sidedir) {
-                            //md文件
-                            sidebar[dirName].push({
-                                text: side,
-                                link: `${dirName}${side}`,
-                            })
-                        }
-                    })
+        sidebar[dirName] = []
+        sideDirs.forEach(sidedir => {
+            if (sidedir.indexOf('.') > -1) {
+                const side = sidedir.split('.')[0]
+                sidebar[dirName].push({
+                    text: side,
+                    link: `${dirName}${side}`,
                 })
             } else {
-                sideDirs.forEach(sidedir => {
-                    if (sidedir.indexOf('.') > -1) {
-                        const side = sidedir.split('.')[0]
-                        sidebar[dirName].push({
-                            text: side,
-                            link: `${dirName}${side}`,
-                        })
-                    } else {
-                        let dirs = fs.readdirSync(path.resolve(SRC_DIR + '/' + `${dir}/${sidedir}`))
-                        dirs = dirs.filter(
-                            dir =>
-                                !IGNORE_DIR.includes(dir) &&
-                                !IGNORE_EXT.includes(path.extname(dir)) &&
-                                path.extname(dir) == '.md'
-                        )
-                        console.log(sidedir, dirs)
-                        if (dirs.length === 1 && dirs[0] === 'index.md') {
-                            sidebar[dirName].push({
-                                text: sidedir,
-                                link: `${dirName}${sidedir}/index`,
-                            })
-                        } else {
-                            sidebar[dirName].push({
-                                text: sidedir,
-                                link: `${dirName}${sidedir}/`,
-                                items: genItems(`${dir}/${sidedir}`),
-                                collapsed: true,
-                            })
-                        }
-                    }
-                })
+                let dirs = fs.readdirSync(path.resolve(SRC_DIR + '/' + `${dir}/${sidedir}`))
+                dirs = dirs.filter(
+                    dir =>
+                        !IGNORE_DIR.includes(dir) &&
+                        !IGNORE_EXT.includes(path.extname(dir)) &&
+                        path.extname(dir) == '.md'
+                )
+                if (dirs.length === 1 && dirs[0] === 'index.md') {
+                    sidebar[dirName].push({
+                        text: sidedir,
+                        link: `${dirName}${sidedir}/index`,
+                    })
+                } else {
+                    sidebar[dirName].unshift({
+                        text: sidedir,
+                        link: `${dirName}${sidedir}/`,
+                        items: genItems(`${dir}/${sidedir}`),
+                        collapsed: true,
+                    })
+                }
             }
-        } else {
-            sidebar[dirName] = genItems(dir)
-        }
+        })
     }
     console.log('nav', nav)
-    console.log('sidebar', JSON.stringify(sidebar))
+    console.log('sidebar', sidebar)
     return {
         nav,
         sidebar,
