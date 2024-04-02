@@ -9,7 +9,7 @@ const SRC_DIR = 'docs'
 
 const IGNORE_FILE = ['index', 'nav', '.DS_Store', 'nav.js', 'index.js', 'index.md']
 const IGNORE_DIR = ['images', 'public']
-const IGNORE_EXT = ['.html'] //忽略后缀
+const IGNORE_EXT = ['.html', '.js', '.DS_Store'] //忽略后缀
 
 const srcSource = path.resolve(SRC_DIR)
 const isDirectory = filePath => {
@@ -113,11 +113,27 @@ export async function genNavSide() {
                             link: `${dirName}${side}`,
                         })
                     } else {
-                        sidebar[dirName].push({
-                            text: sidedir,
-                            items: genItems(`${dir}/${sidedir}`),
-                            collapsed: true,
-                        })
+                        let dirs = fs.readdirSync(path.resolve(SRC_DIR + '/' + `${dir}/${sidedir}`))
+                        dirs = dirs.filter(
+                            dir =>
+                                !IGNORE_DIR.includes(dir) &&
+                                !IGNORE_EXT.includes(path.extname(dir)) &&
+                                path.extname(dir) == '.md'
+                        )
+                        console.log(sidedir, dirs)
+                        if (dirs.length === 1 && dirs[0] === 'index.md') {
+                            sidebar[dirName].push({
+                                text: sidedir,
+                                link: `${dirName}${sidedir}/index`,
+                            })
+                        } else {
+                            sidebar[dirName].push({
+                                text: sidedir,
+                                link: `${dirName}${sidedir}/`,
+                                items: genItems(`${dir}/${sidedir}`),
+                                collapsed: true,
+                            })
+                        }
                     }
                 })
             }

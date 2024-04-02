@@ -1,25 +1,23 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page.html
-layout: page
-# hero:
-#   name: "Blog"
-#   text: "派大星星的个人博客"
-#   tagline: My great project tagline
-#   actions:
-#     - theme: brand
-#       text: Markdown Examples
-#       link: /markdown-examples
-#     - theme: alt
-#       text: API Examples
-#       link: /api-examples
+layout: home
+hero:
+    name: 'Blog'
+    text: '派大星星的个人博客'
+    tagline: My great project tagline
+    actions:
+        - theme: brand
+          text: Markdown Examples
+          link: /markdown-examples
+        - theme: alt
+          text: API Examples
+          link: /api-examples
 
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+    - title: Feature A
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - title: Feature B
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - title: Feature C
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
-<div>2222</div>

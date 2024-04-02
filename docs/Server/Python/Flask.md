@@ -84,9 +84,9 @@ def use_template(name=None):
     return render_template('hello.html', name=name)
 ```
 
-1. 控制结构 {% %}
-2. 变量取值 {{ }}
-3. 注释 {# #}
+1. 控制结构 `{% %}`
+2. 变量取值 `{{ }}`
+3. 注释 `{# #}`
 
 ```js
 {% for file in filenames %}  // for循环

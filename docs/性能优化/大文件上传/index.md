@@ -2,7 +2,7 @@
 
 ## 大文件上传处理流程
 
-![大文件上传处理流程](./%E5%A4%A7%E6%96%87%E4%BB%B6%E5%88%87%E7%89%87%E4%B8%8A%E4%BC%A0.jpeg)
+![大文件上传处理流程](./images/%E5%A4%A7%E6%96%87%E4%BB%B6%E5%88%87%E7%89%87%E4%B8%8A%E4%BC%A0.jpeg)
 
 ## 使用`spark-md5`获取上传文件的 MD5
 
@@ -11,10 +11,10 @@ function calcFileMD5(file, chunkSize = 1 * 1024 * 1024) {
     // 2M
     return new Promise((resolve, reject) => {
         // let chunkSize = 2097152, // 2M
-        ;(chunks = Math.ceil(file.size / chunkSize)),
-            (currentChunk = 0),
-            (spark = new SparkMD5.ArrayBuffer()),
-            (fileReader = new FileReader())
+        chunks = Math.ceil(file.size / chunkSize)
+        currentChunk = 0
+        spark = new SparkMD5.ArrayBuffer()
+        fileReader = new FileReader()
 
         fileReader.onload = e => {
             spark.append(e.target.result)
