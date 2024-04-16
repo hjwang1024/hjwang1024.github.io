@@ -26,6 +26,7 @@
   "homepage": "https://github.com/hjwang1024/hjwang1024.github.io#readme",
   "devDependencies": {
     "node-fetch": "^3.3.2",
+    "stylus": "^0.63.0",
     "vitepress": "^1.0.1"
   }
 }
