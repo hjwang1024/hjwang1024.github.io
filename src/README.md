@@ -1,7 +1,6 @@
 ---
 home: true
 layout: BlogHome
-icon: home
 title: 🏠️ 博客主页
 heroImage: /avatar.png
 bgImage: https://cdn.jsdelivr.net/gh/simeis147/simeis147.github.io@main/src/.vuepress/public/assets/bgImage/iTab-1k6ljv.webp
@@ -38,12 +37,5 @@ projects:
       name: 自定义项目
       desc: 自定义详细介绍
       link: https://你的自定义链接
-
-footer: 自定义你的页脚文字
+# footer: 派大星星的学习笔记
 ---
-
-这是一个博客主页的案例。
-
-要使用此布局，你应该在页面前端设置 `layout: BlogHome` 和 `home: true`。
-
-相关配置文档请见 [博客主页](https://theme-hope.vuejs.press/zh/guide/blog/home/)。
