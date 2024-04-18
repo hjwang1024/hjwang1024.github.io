@@ -3,7 +3,6 @@ import theme from './theme.js'
 
 export default defineUserConfig({
     base: '/',
-
     lang: 'zh-CN',
     title: 'DayDayUp',
     description: '学习笔记',

@@ -1,7 +1,6 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar.js'
 import sidebar from './sidebar.js'
-import { MR_HOPE_AVATAR } from './logo.js'
 
 export default hopeTheme({
     hostname: 'https://github.com/hjwang1024/hjwang1024.github.io',
@@ -9,6 +8,7 @@ export default hopeTheme({
     author: {
         name: '星星',
         url: 'https://github.com/hjwang1024',
+        email: 'hjwang1024@163.com',
     },
 
     iconAssets: 'fontawesome-with-brands',
@@ -27,18 +27,26 @@ export default hopeTheme({
     sidebar,
 
     // 页脚
-    footer: '默认页脚',
-    displayFooter: false,
+    footer: '本站已运行',
+    displayFooter: true,
+
+    // print: false //打印按钮
+    // pure: true, //纯净模式！
 
     // 博客相关
     blog: {
+        avatar: '/avatar.png',
+        roundAvatar: true, //是否剪裁头像为圆形形状
         description: '好好学习，天天向上',
-        intro: '/intro.html',
+        intro: 'https://github.com/hjwang1024',
         medias: {
             Email: 'https://hjwang1024@163.com',
             Gitee: 'https://gitee.com/hjwang1024',
             GitHub: 'https://github.com/hjwang1024',
         },
+        timeline: '时光荏苒，昨日不在', //时间轴的顶部文字
+        articlePerPage: 10, //每页的文章数量
+        articleInfo: ['Date'], //文章列表中展示的文章信息
     },
 
     // 加密配置
@@ -47,7 +55,7 @@ export default hopeTheme({
             // '/demo/encrypt.html': ['1234'],
         },
     },
-
+    editLink: false,
     // 多语言配置
     metaLocales: {
         editLink: '在 GitHub 上编辑此页',
@@ -60,15 +68,20 @@ export default hopeTheme({
     plugins: {
         blog: true,
 
-        // 启用之前需安装 @waline/client
-        // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
-        // comment: {
-        //   provider: "Waline",
-        //   serverURL: "https://waline-comment.vuejs.press",
-        // },
+        searchPro: {
+            // 索引全部内容
+            indexContent: true,
+        },
+        comment: {
+            provider: 'Giscus', // Artalk | Giscus | Waline | Twikoo
+            repo: 'hjwang1024/hjwang1024.github.io',
+            repoId: 'R_kgDOLmHvSA',
+            category: 'Announcements',
+            categoryId: 'DIC_kwDOLmHvSM4CexKN',
+        },
 
         components: {
-            components: ['Badge', 'VPCard'],
+            components: ['Badge', 'VPCard', 'FontIcon', 'SiteInfo'],
         },
 
         // 此处开启了很多功能用于演示，你应仅保留用到的功能。
