@@ -1,32 +1,33 @@
 {
-  "name": "pdxx-blog",
-  "version": "1.0.0",
-  "description": "派大星星的学习笔记",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hjwang1024/hjwang1024.github.io.git"
-  },
-  "keywords": [
-    "博客",
-    "笔记",
-    "前端"
-  ],
-  "author": "派大星星",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hjwang1024/hjwang1024.github.io/issues"
-  },
-  "homepage": "https://github.com/hjwang1024/hjwang1024.github.io#readme",
-  "devDependencies": {
-    "node-fetch": "^3.3.2",
-    "stylus": "^0.63.0",
-    "vitepress": "^1.0.1"
-  }
+    "name": "pdxx-blog",
+    "version": "1.0.0",
+    "description": "派大星星的学习笔记",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "vuepress-vite build src",
+        "clean-dev": "vuepress-vite dev src --clean-cache",
+        "dev": "vuepress-vite dev src",
+        "update-package": "npx vp-update"
+    },
+    "devDependencies": {
+        "@vuepress/bundler-vite": "2.0.0-rc.9",
+        "vue": "^3.4.21",
+        "vuepress": "2.0.0-rc.9",
+        "vuepress-theme-hope": "2.0.0-rc.36"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hjwang1024/hjwang1024.github.io.git"
+    },
+    "keywords": [
+        "博客",
+        "笔记",
+        "前端"
+    ],
+    "author": "派大星星",
+    "bugs": {
+        "url": "https://github.com/hjwang1024/hjwang1024.github.io/issues"
+    },
+    "homepage": "https://github.com/hjwang1024/hjwang1024.github.io#readme"
 }
