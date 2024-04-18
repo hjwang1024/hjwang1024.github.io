@@ -172,7 +172,7 @@ export const disconnectIntersectionListener = function () {
 
 -   `element.getBoundingClientRect().top || element.offsetTop`
 
-![](../性能优化/懒加载/images/浏览器视图.jpeg)
+![](../性能优化/assets/浏览器视图.jpeg)
 
 ## 浏览器解析二维码、条形码的 Barcode Detection API。
 
