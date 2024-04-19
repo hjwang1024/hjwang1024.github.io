@@ -31,7 +31,6 @@
         "vuepress": "2.0.0-rc.8",
         "vuepress-plugin-comment2": "2.0.0-rc.27",
         "vuepress-plugin-components": "2.0.0-rc.27",
-        "vuepress-plugin-meting": "^0.3.3",
         "vuepress-plugin-meting2": "^1.4.1",
         "vuepress-plugin-search-pro": "2.0.0-rc.27",
         "vuepress-theme-hope": "2.0.0-rc.27"
