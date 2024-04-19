@@ -3,7 +3,7 @@ import navbar from './navbar.js'
 import sidebar from './sidebar.js'
 
 export default hopeTheme({
-    hostname: 'https://github.com/hjwang1024/hjwang1024.github.io',
+    hostname: 'https://hjwang1024.github.io/',
 
     author: {
         name: '星星',
@@ -11,11 +11,11 @@ export default hopeTheme({
         email: 'hjwang1024@163.com',
     },
 
-    iconAssets: 'fontawesome-with-brands',
+    // iconAssets: 'fontawesome-with-brands',
 
-    logo: '/avatar.png',
+    logo: '/images/avatar.png',
 
-    repo: 'https://github.com/hjwang1024',
+    repo: 'https://github.com/hjwang1024/hjwang1024.github.io',
 
     docsDir: 'src',
     fullscreen: false, // 页面全屏
@@ -35,7 +35,7 @@ export default hopeTheme({
 
     // 博客相关
     blog: {
-        avatar: '/avatar.png',
+        avatar: '/images/avatar.png',
         roundAvatar: true, //是否剪裁头像为圆形形状
         description: '好好学习，天天向上',
         intro: 'https://github.com/hjwang1024',
@@ -43,6 +43,7 @@ export default hopeTheme({
             Email: 'https://hjwang1024@163.com',
             Gitee: 'https://gitee.com/hjwang1024',
             GitHub: 'https://github.com/hjwang1024',
+            LeetCode: 'https://leetcode.cn/u/whj/',
         },
         timeline: '时光荏苒，昨日不在', //时间轴的顶部文字
         articlePerPage: 10, //每页的文章数量
@@ -92,7 +93,12 @@ export default hopeTheme({
         },
 
         components: {
-            components: ['Badge', 'VPCard', 'FontIcon', 'SiteInfo'],
+            components: ['Badge', 'VPCard', 'FontIcon', 'SiteInfo', 'PDF'],
+            componentOptions: {
+                pdf: {
+                    pdfjs: '/assets/lib/pdfjs/',
+                },
+            },
         },
 
         // 此处开启了很多功能用于演示，你应仅保留用到的功能。

@@ -27,6 +27,7 @@
     "homepage": "https://github.com/hjwang1024/hjwang1024.github.io#readme",
     "devDependencies": {
         "@vuepress/bundler-vite": "2.0.0-rc.8",
+        "axios": "^1.6.8",
         "vue": "^3.4.21",
         "vuepress": "2.0.0-rc.8",
         "vuepress-plugin-comment2": "2.0.0-rc.27",

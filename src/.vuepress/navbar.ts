@@ -11,22 +11,22 @@ export default navbar([
                 children: [
                     {
                         text: 'HTML&CSS',
-                        icon: '/assets/icon/html.svg',
+                        icon: '/icon/html.svg',
                         link: 'HTMLCSS/',
                     },
                     {
                         text: 'JavaScript',
-                        icon: '/assets/icon/javascript.svg',
+                        icon: '/icon/javascript.svg',
                         link: 'JavaScript/',
                     },
                     {
                         text: 'TypeScript',
-                        icon: '/assets/icon/typescript.svg',
+                        icon: '/icon/typescript.svg',
                         link: 'TypeScript/',
                     },
                     {
                         text: '计算机网络',
-                        // icon: '/assets/icon/typescript.svg',
+                        // icon: '/icon/typescript.svg',
                         link: '计算机网络/',
                     },
                 ],
@@ -36,12 +36,12 @@ export default navbar([
                 children: [
                     {
                         text: 'Vue',
-                        icon: '/assets/icon/vue.svg',
+                        icon: '/icon/vue.svg',
                         link: '框架/Vue/',
                     },
                     {
                         text: 'React',
-                        icon: '/assets/icon/react.svg',
+                        icon: '/icon/react.svg',
                         link: '框架/React/',
                     },
                     {
@@ -59,7 +59,7 @@ export default navbar([
                     },
                     {
                         text: '工程化',
-                        icon: '/assets/icon/webpack.svg',
+                        icon: '/icon/webpack.svg',
                         link: '工程化/',
                     },
                     {
@@ -76,49 +76,54 @@ export default navbar([
         children: [
             {
                 text: 'Node',
-                icon: '/assets/icon/node.svg',
+                icon: '/icon/node.svg',
                 link: 'Node/',
             },
             {
                 text: 'Python',
-                icon: '/assets/icon/python.svg',
+                icon: '/icon/python.svg',
                 link: 'Python/',
             },
             {
                 text: 'Nginx',
-                icon: '/assets/icon/nginx.svg',
+                icon: '/icon/nginx.svg',
                 link: 'Nginx/',
             },
             {
                 text: 'Mysql',
-                icon: '/assets/icon/mysql.svg',
+                icon: '/icon/mysql.svg',
                 link: 'Mysql/',
             },
             {
                 text: 'Mongodb',
-                icon: '/assets/icon/mongodb.svg',
+                icon: '/icon/mongodb.svg',
                 link: 'Mongodb/',
             },
             {
                 text: 'Redis',
-                icon: '/assets/icon/redis.svg',
+                icon: '/icon/redis.svg',
                 link: 'Redis/',
             },
             {
                 text: 'Docker',
-                icon: '/assets/icon/docker.svg',
+                icon: '/icon/docker.svg',
                 link: 'Docker/',
             },
             {
                 text: 'Linux',
-                icon: '/assets/icon/linux.svg',
+                icon: '/icon/linux.svg',
                 link: 'Linux/',
             },
             {
                 text: '算法',
-                icon: '/assets/icon/dataStructure.svg',
+                icon: '/icon/dataStructure.svg',
                 link: '算法/',
             },
         ],
+    },
+    {
+        text: 'PDF电子书',
+        icon: 'book',
+        link: 'https://github.com/hjwang1024/hjwang1024.github.io/tree/master/src/PDF',
     },
 ])
