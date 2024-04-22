@@ -3,7 +3,8 @@ home: true
 layout: BlogHome
 title: 🏠️ 博客主页
 heroImage: /images/avatar.png
-bgImage: https://cdn.jsdelivr.net/gh/simeis147/simeis147.github.io@main/src/.vuepress/public/assets/bgImage/iTab-1k6ljv.webp
+bgImage: /images/background.jpg
+# https://cdn.jsdelivr.net/gh/simeis147/simeis147.github.io@main/src/.vuepress/public/assets/bgImage/iTab-1k6ljv.webp
 heroText: ⭐️⭐️
 heroFullScreen: true
 tagline: 好好学习，天天向上
