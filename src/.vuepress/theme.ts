@@ -26,6 +26,9 @@ export default hopeTheme({
     // 侧边栏
     sidebar,
 
+    //路径导航
+    breadcrumb: true,
+
     // 页脚
     footer: '本站已运行',
     displayFooter: true,

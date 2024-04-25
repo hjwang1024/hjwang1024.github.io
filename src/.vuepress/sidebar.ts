@@ -8,7 +8,7 @@ export default sidebar({
     '/frontend/计算机网络/': 'structure',
     '/frontend/性能优化/': 'structure',
     '/frontend/工程化/': 'structure',
-    '/frontend/webAPI/': 'structure',
+    '/frontend/WebAPI/': 'structure',
 
     '/server/Node/': 'structure',
     '/server/Python/': 'structure',
@@ -19,4 +19,6 @@ export default sidebar({
     '/server/Docker/': 'structure',
     '/server/Linux/': 'structure',
     '/server/算法/': 'structure',
+
+    '/collection/travel/': 'structure',
 })

@@ -63,8 +63,8 @@ export default navbar([
                         link: '工程化/',
                     },
                     {
-                        text: 'web API',
-                        link: 'webAPI/',
+                        text: 'Web API',
+                        link: 'WebAPI/',
                     },
                 ],
             },
@@ -125,5 +125,16 @@ export default navbar([
         text: 'PDF电子书',
         icon: 'book',
         link: 'https://github.com/hjwang1024/hjwang1024.github.io/tree/master/src/PDF',
+    },
+    {
+        text: '收藏',
+        prefix: '/collection/',
+        children: [
+            {
+                text: '走,出去玩',
+                icon: '/icon/node.svg',
+                link: 'travel/',
+            },
+        ],
     },
 ])
