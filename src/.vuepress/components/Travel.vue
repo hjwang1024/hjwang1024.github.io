@@ -5,14 +5,16 @@ import { createPhotoSwipe } from '@vuepress/plugin-photo-swipe/client'
 let list = photo
 list = []
 
-let a = Object.values(import.meta.glob('../public/images/*.*', { eager: true })).map((v: any) => v.default)
+let a = Object.values(import.meta.glob('../public/images/travel/*.*', { eager: true })).map((v: any) => v.default)
 console.log(a)
-list = a
+list = [...a, ...a]
 
 let state = null
 
 const openPhotoSwipe = (index: number) => {
-    state?.open(index - 1)
+    console.log(index)
+
+    state?.open(index)
 }
 
 onMounted(async () => {
@@ -20,6 +22,7 @@ onMounted(async () => {
     state = await createPhotoSwipe(list, {
         // photoswipe 选项
     })
+    console.log(document)
 })
 
 onUnmounted(() => {
@@ -28,7 +31,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div>
+    <div class="img-container">
         <img
             v-for="(item, index) in list"
             :src="item"
@@ -41,7 +44,10 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss">
-.img-item {
-    width: 48%;
+.img-container {
+    .img-item {
+        width: 45%;
+        cursor: pointer;
+    }
 }
 </style>
