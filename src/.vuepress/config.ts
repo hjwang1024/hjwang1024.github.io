@@ -37,6 +37,10 @@ export default defineUserConfig({
                 mid: '851947617',
             },
         }),
-        ViteImageOptimizer({}),
+        ViteImageOptimizer({
+            png: { quality: 80 },
+            jpeg: { quality: 80 },
+            jpg: { quality: 80 },
+        }),
     ],
 })
