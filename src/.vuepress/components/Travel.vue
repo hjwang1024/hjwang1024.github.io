@@ -6,6 +6,7 @@
             :key="index"
             @click="openPhotoSwipe(index)"
             alt="item"
+            loading="lazy"
             class="img-item"
         />
     </div>
