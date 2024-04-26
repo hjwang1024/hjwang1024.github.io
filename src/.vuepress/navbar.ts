@@ -26,7 +26,7 @@ export default navbar([
                     },
                     {
                         text: '计算机网络',
-                        // icon: '/icon/typescript.svg',
+                        icon: '/icon/net.svg',
                         link: '计算机网络/',
                     },
                 ],
@@ -46,6 +46,7 @@ export default navbar([
                     },
                     {
                         text: 'Axios',
+                        icon: '/icon/axios.svg',
                         link: '框架/Axios',
                     },
                 ],
@@ -55,6 +56,7 @@ export default navbar([
                 children: [
                     {
                         text: '性能优化',
+                        icon: '/icon/up.svg',
                         link: '性能优化/',
                     },
                     {
@@ -64,6 +66,7 @@ export default navbar([
                     },
                     {
                         text: 'Web API',
+                        icon: '/icon/web.svg',
                         link: 'WebAPI/',
                     },
                 ],
@@ -71,7 +74,7 @@ export default navbar([
         ],
     },
     {
-        text: '📑 Server',
+        text: '💾 Server',
         prefix: '/server/',
         children: [
             {
@@ -122,17 +125,17 @@ export default navbar([
         ],
     },
     {
-        text: 'PDF电子书',
+        text: '📖 PDF电子书',
         icon: 'book',
         link: 'https://github.com/hjwang1024/hjwang1024.github.io/tree/master/src/PDF',
     },
     {
-        text: '收藏',
+        text: '⭐ 收藏',
         prefix: '/collection/',
         children: [
             {
                 text: '走,出去玩',
-                icon: '/icon/node.svg',
+                icon: '/icon/travel.svg',
                 link: 'travel/',
             },
         ],

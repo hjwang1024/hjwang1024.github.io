@@ -2,13 +2,16 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ES2022"
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "types": ["vite/client"]
   },
-  "include": [
-    "src/.vuepress/**/*.ts",
-    "src/.vuepress/**/*.vue"
-  ],
+  
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "src/.vuepress/*.vue"
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
