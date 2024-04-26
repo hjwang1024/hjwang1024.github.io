@@ -3,7 +3,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import theme from './theme.js'
 import metingPlugin from 'vuepress-plugin-meting2'
 import path from 'path'
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import viteCompression from 'vite-plugin-compression'
 const _resolve = dir => {
     return path.resolve(__dirname, dir)
 }
@@ -37,10 +37,6 @@ export default defineUserConfig({
                 mid: '851947617',
             },
         }),
-        ViteImageOptimizer({
-            png: { quality: 80 },
-            jpeg: { quality: 80 },
-            jpg: { quality: 80 },
-        }),
+        viteCompression(),
     ],
 })

@@ -3,7 +3,7 @@
         <img
             v-for="(item, index) in list"
             :data-src="item"
-            src=""
+            src="./assets/images/travel-background.jpeg"
             :key="index"
             @click="openPhotoSwipe(index)"
             alt="item"
@@ -15,18 +15,17 @@
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick, onUnmounted } from 'vue'
+// 预览插件
 import { createPhotoSwipe } from '@vuepress/plugin-photo-swipe/client'
-let list = Object.values((import.meta as any).glob('./assets/images/travel/*.*', { eager: true })).map(
-    // let list = Object.values((import.meta as any).glob('../public/images/travel/*.*', { eager: true })).map(
+// let list = Object.values((import.meta as any).glob('./assets/images/travel/*.*', { eager: true })).map(
+let list = Object.values((import.meta as any).glob('../public/images/travel/*.*', { eager: true })).map(
     (v: any) => v.default
 )
-list = [...list, ...list, ...list]
 let state: any = null
+console.log(list)
 
 const openPhotoSwipe = (index: number) => {
     console.log(index)
-
-    // state?.open(index)
 }
 
 onMounted(async () => {
@@ -41,23 +40,14 @@ onMounted(async () => {
     }
     const images = document.querySelectorAll('.img-item')
     const intersectionObserver = new IntersectionObserver(callback, option)
-
     function callback(entries) {
         entries.forEach(item => {
             if (item.isIntersecting) {
-                console.log(item.target)
-
                 item.target.src = item.target.dataset.src // 开始加载图片,把data-origin的值放到src
-                console.log(item.target.dataset.src)
-
                 intersectionObserver.unobserve(item.target) // 停止监听已开始加载的图片
             }
         })
     }
-    console.log(list)
-
-    console.log(document.querySelectorAll('.img-item'))
-
     images.forEach(item => intersectionObserver.observe(item))
 })
 
