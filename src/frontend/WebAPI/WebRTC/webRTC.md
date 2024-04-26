@@ -79,7 +79,7 @@ a=candidate:0 1 UDP 2122252543 120.24.99.xx 9 typ host # 候选 IP 地址
 7. 完成打洞后，A 和 B 开始为安全的媒体通信协商秘钥；
 8. 至此， A 和 B 可以进行音视频通话。
 
-![流程图](./images/WebRTC.jpeg)
+![流程图](./assets/WebRTC.jpeg)
 
 #### 本地实现
 
@@ -601,4 +601,4 @@ a=candidate:0 1 UDP 2122252543 120.24.99.xx 9 typ host # 候选 IP 地址
 
 -   HTTP-FLV (用于拉流端)本协议就是 http+flv，将音视频数据封装成 FLV 格式，然后通过 http 协议传输到客户端，这个协议大大方便了浏览器客户端播放直播视频流。目前 flv.js 库支持该格式的文件播放。
 
-![直播通信](./images/直播通信.png)
+![直播通信](./assets/直播通信.png)
