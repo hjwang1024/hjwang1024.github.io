@@ -61,7 +61,7 @@ onUnmounted(() => {
         width: 45%;
         height: 200px;
         cursor: pointer;
-        padding: 4px;
+        margin: 4px;
         border-radius: 10px;
         object-fit: cover;
     }
