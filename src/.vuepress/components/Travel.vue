@@ -3,7 +3,7 @@
         <img
             v-for="(item, index) in list"
             :data-src="item"
-            src="./assets/images/travel-background.jpeg"
+            src="/images/travel-background.jpeg"
             :key="index"
             @click="openPhotoSwipe(index)"
             alt="item"
@@ -22,7 +22,6 @@ let list = Object.values((import.meta as any).glob('../public/images/travel/*.*'
     (v: any) => v.default
 )
 let state: any = null
-console.log(list)
 
 const openPhotoSwipe = (index: number) => {
     console.log(index)
