@@ -2,7 +2,8 @@
     <div class="img-container">
         <img
             v-for="(item, index) in list"
-            :src="item"
+            :data-src="item"
+            src=""
             :key="index"
             @click="openPhotoSwipe(index)"
             alt="item"
@@ -19,7 +20,7 @@ let list = Object.values((import.meta as any).glob('./assets/images/travel/*.*',
     // let list = Object.values((import.meta as any).glob('../public/images/travel/*.*', { eager: true })).map(
     (v: any) => v.default
 )
-
+list = [...list, ...list, ...list]
 let state: any = null
 
 const openPhotoSwipe = (index: number) => {
@@ -33,6 +34,31 @@ onMounted(async () => {
     state = await createPhotoSwipe(list, {
         // photoswipe 选项
     })
+    const option = {
+        root: null, //所监听对象的具体祖先元素。如果未传入值或值为null，则默认使用顶级文档的视窗。
+        rootMargin: '20px 0px', //预先加载的距离
+        threshold: [0], // 特定的相交比例
+    }
+    const images = document.querySelectorAll('.img-item')
+    const intersectionObserver = new IntersectionObserver(callback, option)
+
+    function callback(entries) {
+        entries.forEach(item => {
+            if (item.isIntersecting) {
+                console.log(item.target)
+
+                item.target.src = item.target.dataset.src // 开始加载图片,把data-origin的值放到src
+                console.log(item.target.dataset.src)
+
+                intersectionObserver.unobserve(item.target) // 停止监听已开始加载的图片
+            }
+        })
+    }
+    console.log(list)
+
+    console.log(document.querySelectorAll('.img-item'))
+
+    images.forEach(item => intersectionObserver.observe(item))
 })
 
 onUnmounted(() => {
