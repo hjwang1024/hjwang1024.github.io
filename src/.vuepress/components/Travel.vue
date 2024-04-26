@@ -14,7 +14,8 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, onUnmounted } from 'vue'
 import { createPhotoSwipe } from '@vuepress/plugin-photo-swipe/client'
-let list = Object.values((import.meta as any).glob('../public/images/travel/*.*', { eager: true })).map(
+let list = Object.values((import.meta as any).glob('./assets/images/travel/*.*', { eager: true })).map(
+    // let list = Object.values((import.meta as any).glob('../public/images/travel/*.*', { eager: true })).map(
     (v: any) => v.default
 )
 
