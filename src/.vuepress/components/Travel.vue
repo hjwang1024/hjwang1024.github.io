@@ -1,14 +1,6 @@
 <template>
     <div class="img-container">
-        <img
-            v-for="(item, index) in list"
-            :src="item"
-            :key="index"
-            @click="openPhotoSwipe(index)"
-            alt="item"
-            loading="lazy"
-            class="img-item"
-        />
+        <img v-for="(item, index) in list" :src="item" :key="index" alt="item" loading="lazy" class="img-item" />
     </div>
 </template>
 

@@ -21,4 +21,5 @@ export default sidebar({
     '/server/算法/': 'structure',
 
     '/collection/travel/': 'structure',
+    '/collection/cats/': 'structure',
 })

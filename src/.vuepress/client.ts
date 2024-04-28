@@ -3,6 +3,7 @@ import { defineClientConfig } from 'vuepress/client'
 import { defineAsyncComponent } from 'vue'
 import { setupRunningTimeFooter } from 'vuepress-theme-hope/presets/footerRunningTime.js'
 import Travel from './components/Travel.vue'
+import Cats from './components/Cats.vue'
 
 export default defineClientConfig({
     setup() {
@@ -16,6 +17,7 @@ export default defineClientConfig({
     },
     enhance({ app, router, siteData }) {
         app.component('Travel', Travel)
+        app.component('Cats', Cats)
     },
     rootComponents: [],
 })

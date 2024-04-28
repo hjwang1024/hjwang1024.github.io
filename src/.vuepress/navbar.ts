@@ -138,6 +138,11 @@ export default navbar([
                 icon: '/icon/travel.svg',
                 link: 'travel/',
             },
+            {
+                text: '豆豆和狗蛋儿',
+                icon: '/icon/cat.svg',
+                link: 'cats/',
+            },
         ],
     },
 ])
