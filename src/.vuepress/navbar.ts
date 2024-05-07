@@ -125,11 +125,6 @@ export default navbar([
         ],
     },
     {
-        text: '📖 PDF电子书',
-        icon: 'book',
-        link: 'https://github.com/hjwang1024/hjwang1024.github.io/tree/master/src/PDF',
-    },
-    {
         text: '⭐ 收藏',
         prefix: '/collection/',
         children: [
@@ -144,5 +139,10 @@ export default navbar([
                 link: 'cats/',
             },
         ],
+    },
+    {
+        text: '📖 PDF电子书',
+        icon: 'book',
+        link: 'https://github.com/hjwang1024/hjwang1024.github.io/tree/master/src/PDF',
     },
 ])
